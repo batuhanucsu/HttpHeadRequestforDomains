@@ -14,20 +14,21 @@ namespace NamedClient
         {
             // Configure services
             Container = RegisterServices();
-
+            //var services = new ServiceCollection();
 
             GlobalConfiguration.Configuration
                                         .UseColouredConsoleLogProvider()
-                                        .UseMemoryStorage();
-           
+                                        .UseMemoryStorage()
+                                        //;
+                                        .UseActivator(new ContainerJobActivator(Container));
 
-            RecurringJob.AddOrUpdate(() => new Client().HeadEplatform(), Cron.Minutely);
+            var service = Container.GetRequiredService<IEplatformRequestService>();
+            RecurringJob.AddOrUpdate(() => service.Send(new HttpRequestMessage(HttpMethod.Head, "/hc")), Cron.Minutely);
+            //ePlatformRequestService.Send(new HttpRequestMessage(HttpMethod.Head, "/hc"));
             // starting a new server.
             using (var server = new BackgroundJobServer())
             {
-
                 Console.WriteLine("starting hangfire job server");
-
                 Console.ReadKey();
             }
 
@@ -37,6 +38,8 @@ namespace NamedClient
         {
             var serviceCollection = new ServiceCollection();
             ConfigureHttpClients(serviceCollection);
+            serviceCollection.AddTransient<EplatformRequestService>();
+            serviceCollection.AddTransient<IEplatformRequestService, EplatformRequestService>();
             return serviceCollection.BuildServiceProvider();
         }
 
@@ -44,12 +47,9 @@ namespace NamedClient
         {
             services.AddHttpClient("eplatform", client =>
             {
-                client.BaseAddress = new Uri("https://health-status.eplatform.com.tr/hc");
+                client.BaseAddress = new Uri("https://health-status.eplatform.com.tr");
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                
             });
-
-
         }
     }
 }

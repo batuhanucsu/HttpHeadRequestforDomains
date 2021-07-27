@@ -952,11 +952,12 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "zhmFh6g68gss31doZ6/IY006SVjgZ7D7MtjR/7o1tjlO+Xq1Zrq69e9SK/tfkRlfDQ2JLICVXTof6thvjfxFhQ==",
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -1148,30 +1149,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\yilmaz.buhar\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\HttpClientFactoryHeadConsole\\HttpClientFactoryHeadConsole\\NamedClient.csproj",
+      "projectUniqueName": "C:\\ePlatform\\Projects\\ePlatform\\HttpHeadRequestforDomains\\HttpClientFactoryHeadConsole\\NamedClient.csproj",
       "projectName": "NamedClient",
-      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\HttpClientFactoryHeadConsole\\HttpClientFactoryHeadConsole\\NamedClient.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\HttpClientFactoryHeadConsole\\HttpClientFactoryHeadConsole\\obj\\",
+      "projectPath": "C:\\ePlatform\\Projects\\ePlatform\\HttpHeadRequestforDomains\\HttpClientFactoryHeadConsole\\NamedClient.csproj",
+      "packagesPath": "C:\\Users\\yilmaz.buhar\\.nuget\\packages\\",
+      "outputPath": "C:\\ePlatform\\Projects\\ePlatform\\HttpHeadRequestforDomains\\HttpClientFactoryHeadConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\yilmaz.buhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nexus.medyasoft.com.tr/repository/eplatfrom-nuget-group/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
