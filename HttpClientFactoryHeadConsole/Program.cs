@@ -19,7 +19,6 @@ namespace NamedClient
             GlobalConfiguration.Configuration
                                         .UseColouredConsoleLogProvider()
                                         .UseMemoryStorage()
-                                        //;
                                         .UseActivator(new ContainerJobActivator(Container));
 
             var service = Container.GetRequiredService<IEplatformRequestService>();
