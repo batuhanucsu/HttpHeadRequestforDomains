@@ -43,6 +43,7 @@ namespace NamedClient
             //response.ToString();
             Console.WriteLine(response.ToString());
             //return await response.Content.ReadAsStringAsync();
+            
 
             return response;
         }
