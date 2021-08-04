@@ -23,7 +23,7 @@ namespace NamedClient
 
     public interface IEplatformRequestService
     {
-        Task<HttpResponseMessage> Send(HttpRequestMessage httpRequestMessage);
+        Task<string/*HttpResponseMessage*/> Send(HttpRequestMessage httpRequestMessage);
     }
 
     public class EplatformRequestService : IEplatformRequestService
@@ -35,7 +35,7 @@ namespace NamedClient
             _clientFactory = clientFactory;
         }
 
-        public async Task<HttpResponseMessage> Send(HttpRequestMessage httpRequestMessage)
+        public async Task<string/*HttpResponseMessage*/> Send(HttpRequestMessage httpRequestMessage)
         {
             var httpClient = _clientFactory.CreateClient("eplatform");
             var response = await httpClient.SendAsync(httpRequestMessage);//.ConfigureAwait(false);
@@ -45,7 +45,7 @@ namespace NamedClient
             //return await response.Content.ReadAsStringAsync();
             
 
-            return response;
+            return response.StatusCode.ToString();
         }
     }
 }
